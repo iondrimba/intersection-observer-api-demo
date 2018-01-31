@@ -1,0 +1,26 @@
+{
+  "name": "intersection-observer-api-demo",
+  "version": "1.0.0",
+  "description": "WIP  - Intersection Observer API https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+  "main": "index.js",
+  "scripts": {
+    "clear": "./node_modules/.bin/pm2 delete all",
+    "start": "./node_modules/.bin/pm2 start server.js",
+    "test": "./node_modules/.bin/pm2 start server.js && ./node_modules/.bin/testcafe chrome:headless test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iondrimba/intersection-observer-api-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iondrimba/intersection-observer-api-demo/issues"
+  },
+  "homepage": "https://github.com/iondrimba/intersection-observer-api-demo#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pm2": "^2.9.3",
+    "testcafe": "^0.18.6"
+  }
+}
