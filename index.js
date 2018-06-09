@@ -1,7 +1,7 @@
 const getThreshold = () => {
   let data = [];
 
-  for (let i = 0; i <= 1.0; i += 0.01) {
+  for (let i = 0; i <= 1.0; i += 0.005) {
     data.push(i);
   }
 
@@ -25,18 +25,18 @@ const handleChanges = (entries) => {
     const element = target.querySelector('.percentage__value');
     const bg = target.querySelector('.legend__bg');
     const view = target.className.split(' ')[1];
+    const percentage = Math.ceil(intersectionRatio * 100);
 
-    element.textContent = Math.round(intersectionRatio * 100);
+    element.textContent = percentage;
 
     handleLegendBg({
       bg: document.querySelector(`.legend__item--${view}`).querySelector('.legend__bg'),
-      percentage: Math.round(intersectionRatio * 100) /100
+      percentage: percentage / 100
     })
   });
 }
 
 const handleLegendBg = ({ bg, percentage }) => {
-  console.log('handleLegendBg', percentage);
   bg.style.transform = `scaleX(${percentage}`;
 };
 
