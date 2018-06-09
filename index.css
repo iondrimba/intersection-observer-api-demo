@@ -1,58 +1,72 @@
+:root {
+  --home-color: #423e6e;
+  --about-color: #ffbf00;
+  --contact-color: #2bdfbb;
+  --services-color: #e24161;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
-  position: sticky;
-  display: block;
-  top: 0;
   background-color: #ffffff;
+  display: block;
   margin: 0;
   padding: 30px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .view {
-  height: 100vh;
-  width: 100%;
-  padding: 40px;
   color: #ffffff;
+  height: 100vh;
+  padding: 40px;
   position: relative;
+  width: 100%;
 }
 
 .view__title {
+  font-size: 30px;
+  margin: 0;
   text-transform: uppercase;
 }
 
-.view--home {
-  background-color: #423e6e;
+.home ,
+.legend__item--home .legend__bg {
+  background-color: var(--home-color);
 }
 
-.view--about {
-  background-color: #ffbf00;
+.about,
+.legend__item--about .legend__bg {
+  background-color: var(--about-color);
 }
 
-.view--services {
-  background-color: #e24161;
+.contact,
+.legend__item--contact .legend__bg {
+  background-color: var(--contact-color);
 }
 
-.view--contact {
-  background-color: #2bdfbb;
+.services,
+.legend__item--services .legend__bg {
+  background-color: var(--services-color);
 }
 
 .percentage {
-  width: 150px;
-  height: 150px;
-  transform: translate(-50%, -50%);
-  top: 50%;
+  height: 200px;
   left: 50%;
   position: absolute;
   text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
 }
 
 .percentage__value {
@@ -61,4 +75,44 @@ body {
 
 .percentage__extension {
   font-size: 50px;
+}
+
+.sub {
+  display: block;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.legend {
+  background-color: #ffffff;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.legend__bg {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  width: 100%;
+  z-index: 2;
+}
+
+.legend__item {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.legend__title {
+  position: relative;
+  z-index: 3;
 }
