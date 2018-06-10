@@ -22,9 +22,8 @@ const mountObserver = ({ target, handler, threshold }) => {
 
 const handleChanges = (entries) => {
   entries.forEach(function ({ target, intersectionRatio }) {
-    const element = target.querySelector('.percentage__value');
-    const bg = target.querySelector('.legend__bg');
-    const view = target.className.split(' ')[1];
+    const element = target.querySelector('.percentage__value');    
+    const view = target.className.split(' ')[1];    
     const percentage = Math.ceil(intersectionRatio * 100);
 
     element.textContent = percentage;
