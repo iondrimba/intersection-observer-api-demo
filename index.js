@@ -36,7 +36,7 @@ const handleChanges = (entries) => {
 }
 
 const handleLegendBg = ({ bg, percentage }) => {
-  bg.style.transform = `scaleX(${percentage}`;
+  bg.style.transform = `scaleX(${percentage})`;
 };
 
 document.addEventListener('DOMContentLoaded', function (event) {
