@@ -40,27 +40,13 @@ const handleLegendBg = ({ bg, percentage }) => {
 };
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  mountObserver({
-    target: document.querySelector('.home'),
-    handler: handleChanges,
-    threshold: getThreshold()
-  });
-
-  mountObserver({
-    target: document.querySelector('.about'),
-    handler: handleChanges,
-    threshold: getThreshold()
-  });
-
-  mountObserver({
-    target: document.querySelector('.contact'),
-    handler: handleChanges,
-    threshold: getThreshold()
-  });
-
-  mountObserver({
-    target: document.querySelector('.services'),
-    handler: handleChanges,
-    threshold: getThreshold()
+  const views = ['.home', '.about', '.contact', '.services'];
+  
+  views.map((view) => {
+    mountObserver({
+      target: document.querySelector(view),
+      handler: handleChanges,
+      threshold: getThreshold()
+    });  
   });
 });
